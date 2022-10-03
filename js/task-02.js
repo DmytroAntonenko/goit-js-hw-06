@@ -6,15 +6,15 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const ingredientsContainerEl = document.querySelector("#ingredients");
+const newArray = [];
 
 ingredients.map(ingredient => {
     const productEl = document.createElement("li");
     productEl.classList.add('item');
     productEl.textContent = ingredient;
-    console.log(productEl);
+    newArray.push(productEl);
+  });
 
-    const ingredientsContainerEl = document.querySelector("#ingredients");
-    ingredientsContainerEl.append(productEl);
-  })
-
+  ingredientsContainerEl.append(...newArray);
   
